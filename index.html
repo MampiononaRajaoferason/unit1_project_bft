@@ -25,15 +25,21 @@
 
 
     <title></title>
+
+    <style>
+      .dropdown-toggle:after { content: none } /*getting rid of the caret icon*/
+
+      /*ul.nav li.nav-item  :hover {     background: none!important  } */
+    </style>
   </head>
   <body data-spy= "scroll" data-target= "#menu">
 
     <!--Section Home -->
-    <div id="home" class="">
+    <div id="home" class="myMenu">
 
       <!--- Navigation --->
       <nav class="navbar navbar-dark navbar-expand-md fixed-top" >
-        <div class="container-fluid">
+        <div class="container-fluid" id="">
           <a class="navbar-brand" href="#">
             <img id="logo" src="my_logo21.png" alt="">
           </a>
@@ -41,22 +47,38 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="menu">
-            <ul class="navbar-nav ml-auto">
+
+            <ul class="nav navbar-nav ml-auto" >
               <li class="nav-item">
-                <a class="nav-link" href="#home">Home</a>
+                <a class="nav-link bg-transparent" href="#home">Home</a>
               </li>
+              <!--
               <li class="nav-item">
                 <a class="nav-link" href="#about">About</a>
               </li>
+            -->
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle bg-transparent" href="#about"  data-toggle="dropdown">About </a>
+
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Technologies</a></li>
+                        <li><a href="#">Web & Mobile development</a></li>
+                      </ul>
+
+              </li>
+
+
               <li class="nav-item">
-                <a class="nav-link" href="#portfolio">Portfolio</a>
+                <a class="nav-link bg-transparent" href="#portfolio">Portfolio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#testimonials">Testimonials</a>
+                <a class="nav-link bg-transparent" href="#testimonials">Testimonials</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
+                <a class="nav-link bg-transparent" href="#contact">Contact</a>
               </li>
+
             </ul>
           </div>
 
@@ -72,6 +94,7 @@
         </div>
 
       </div>
+
     <!-- Start landing Page caption -->
     <div id="caption_id" class= "caption center-block text-center" >
       <h3>Welcome</h3>
@@ -215,15 +238,9 @@
             <!-- AOS.js-->
             <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
 
-            <script>
-            AOS.init();
-            $(document).ready(function(){
-              $("#caption_id").addClass("animated fadeIn");
+            <!-- main js-->
+            <script src="main.js"></script>
 
-
-
-            })
-            </script>
 
   </body>
 </html>
